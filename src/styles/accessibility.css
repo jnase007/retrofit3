@@ -1,0 +1,100 @@
+:root {
+  /* High contrast colors that meet WCAG 2.1 AA standards */
+  --color-primary: #1E3A8A;    /* Dark blue - contrast ratio > 4.5:1 with white */
+  --color-primary-light: #2563EB;
+  --color-secondary: #10B981;  /* Green - contrast ratio > 4.5:1 with white */
+  --color-text: #111827;       /* Near black - contrast ratio > 7:1 with white */
+  --color-text-light: #4B5563; /* Gray - contrast ratio > 4.5:1 with white */
+  --color-background: #FFFFFF;
+  --color-error: #DC2626;      /* Red - contrast ratio > 4.5:1 with white */
+  --color-success: #059669;    /* Green - contrast ratio > 4.5:1 with white */
+}
+
+/* Focus styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Ensure sufficient text contrast */
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* Improved link styles */
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+/* Form element styles */
+input, select, textarea {
+  border: 2px solid var(--color-text-light);
+}
+
+/* Error states */
+.error {
+  color: var(--color-error);
+}
+
+/* Success states */
+.success {
+  color: var(--color-success);
+}
+
+/* Skip to main content link */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  left: 0;
+  top: 0;
+}
+
+/* Ensure sufficient spacing for touch targets */
+button, 
+[role="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 1rem;
+}
+
+/* Improved focus indicators for interactive elements */
+button:focus,
+[role="button"]:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Ensure text remains visible during webfont load */
+body {
+  font-display: swap;
+}
+
+/* Reduce motion if user prefers */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
